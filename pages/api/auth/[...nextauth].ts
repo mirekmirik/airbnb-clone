@@ -12,7 +12,9 @@ export const authOptions: AuthOptions = {
     GitHubProvider({
       clientId: process.env.GITHUB_ID as string,
       clientSecret: process.env.GITHUB_SECRET as string,
-    }),
+    },
+    
+    ),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
@@ -27,7 +29,6 @@ export const authOptions: AuthOptions = {
         if (!credentials?.email || !credentials?.password) {
           throw new Error(`Invalid credentials`);
         }
-
         const user = await prisma.user.findUnique({
           where: {
             email: credentials.email,
@@ -46,7 +47,6 @@ export const authOptions: AuthOptions = {
         if (!isCorrectPassword) {
           throw new Error(`Invalid credentials`);
         }
-
         return user;
       },
     }),

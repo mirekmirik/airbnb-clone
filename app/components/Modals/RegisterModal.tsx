@@ -1,5 +1,5 @@
 "use client";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useEffect, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import useRegisterModal from "../../hooks/useRegisterModal";
@@ -11,6 +11,8 @@ import toast from "react-hot-toast";
 import Button from "../Button";
 import { AiFillGithub } from "react-icons/ai";
 import useLoginModel from "../../hooks/useLoginModal";
+import { signIn } from "next-auth/react";
+import { error } from "console";
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -45,10 +47,12 @@ const RegisterModal = () => {
         registerModal.onClose();
       })
       .catch((err) => {
+        if (err.response && err.response.data) {
+          return toast.error(err.response.data);
+        }
         toast.error(err.message);
       })
       .finally(() => {
-        console.log(data);
         setIsLoading(false);
       });
   };
@@ -91,13 +95,13 @@ const RegisterModal = () => {
         outline
         label="Continue with Google"
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={() => signIn("google")}
       />
       <Button
         outline
         label="Continue with GitHub"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => signIn("github")}
       />
       <div className="text-neutral-500 text-center mt-4 font-light">
         <div className="justify-center flex flex-row items-center gap-2">
