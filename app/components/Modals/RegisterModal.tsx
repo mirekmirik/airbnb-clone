@@ -10,13 +10,13 @@ import Input from "../Inputs/Input";
 import toast from "react-hot-toast";
 import Button from "../Button";
 import { AiFillGithub } from "react-icons/ai";
-import useLoginModel from "../../hooks/useLoginModal";
+import useLoginModal from "../../hooks/useLoginModal";
 import { signIn } from "next-auth/react";
 import { error } from "console";
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
-  const loginModal = useLoginModel();
+  const loginModal = useLoginModal();
   const [isLoading, setIsLoading] = useState(false);
 
   const {

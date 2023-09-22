@@ -6,10 +6,10 @@ interface LoginModelStore {
   onClose: () => void;
 }
 
-const useLoginModel = create<LoginModelStore>((set) => ({
+const useLoginModal = create<LoginModelStore>((set) => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
 }));
 
-export default useLoginModel;
+export default useLoginModal;

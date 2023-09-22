@@ -1,10 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import {
-  FieldValues,
-  SubmitHandler,
-  useForm,
-} from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import useRegisterModal from "../../hooks/useRegisterModal";
 import { FcGoogle } from "react-icons/fc";
 import Modal from "./Modal";
@@ -13,14 +9,14 @@ import Input from "../Inputs/Input";
 import toast from "react-hot-toast";
 import Button from "../Button";
 import { AiFillGithub } from "react-icons/ai";
-import useLoginModel from "../../hooks/useLoginModal";
+import useLoginModal from "../../hooks/useLoginModal";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const LoginModal = () => {
   const router = useRouter();
   const registerModal = useRegisterModal();
-  const loginModal = useLoginModel();
+  const loginModal = useLoginModal();
   const [isLoading, setIsLoading] = useState(false);
 
   const {

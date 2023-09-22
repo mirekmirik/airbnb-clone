@@ -5,7 +5,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import Avatar from "../Avatar";
 import MenuItem from "./MenuItem";
 import useRegisterModal from "../../hooks/useRegisterModal";
-import useLoginModel from "../../hooks/useLoginModal";
+import useLoginModal from "../../hooks/useLoginModal";
 import { signOut } from "next-auth/react";
 import RentModal from "../Modals/RentModal";
 import useRentModal from "@/app/hooks/useRentModal";
@@ -16,7 +16,7 @@ interface UserMenuProps {
 
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const registerModal = useRegisterModal();
-  const loginModal = useLoginModel();
+  const loginModal = useLoginModal();
   const rentModal = useRentModal();
   const [isOpen, setIsOpen] = useState(false);
 
