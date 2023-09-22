@@ -18,6 +18,7 @@ export async function POST(request: Request) {
     location,
     price,
   } = body;
+  
   Object.keys(body).forEach((key) => {
     if (!body[key]) {
       NextResponse.error();

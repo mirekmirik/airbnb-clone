@@ -20,6 +20,7 @@ interface ListingCardProps {
   actionId?: string;
 }
 
+// COMPONEMT
 const ListingCard: React.FC<ListingCardProps> = ({
   data,
   actionId,

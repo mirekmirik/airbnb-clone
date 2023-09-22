@@ -1,6 +1,5 @@
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import { NextResponse } from "next/server";
-
 import prisma from '@/app/libs/prismadb'
 
 
@@ -41,8 +40,7 @@ export async function DELETE(request: Request, { params }: { params: IParams }) 
     throw new Error("Invalid ID");
   }
 
-  let favoriteIds = [...(currentUser.favoriteIds || [])];
-  favoriteIds = favoriteIds.filter((id) => id !== listingId);
+  const favoriteIds = (currentUser.favoriteIds || []).filter((id) => id !== listingId)
 
   const user = await prisma.user.update({
     where: {
