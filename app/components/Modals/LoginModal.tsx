@@ -4,7 +4,6 @@ import {
   FieldValues,
   SubmitHandler,
   useForm,
-  useFormState,
 } from "react-hook-form";
 import useRegisterModal from "../../hooks/useRegisterModal";
 import { FcGoogle } from "react-icons/fc";
