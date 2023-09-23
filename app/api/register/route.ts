@@ -10,7 +10,7 @@ export async function POST(request: Request) {
   });
   if (existingUser) {
     return new Response("Email is already in use", {
-      status: 409, 
+      status: 409,
     });
   }
   const hashedPassword = await bcrypt.hash(password, 12);

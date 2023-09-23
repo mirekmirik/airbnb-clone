@@ -8,11 +8,7 @@ interface ListingCategoryProps {
   description: string;
 }
 
-const ListingCategory: React.FC<ListingCategoryProps> = ({
-  icon: Icon,
-  description,
-  label,
-}) => {
+const ListingCategory: React.FC<ListingCategoryProps> = ({ icon: Icon, description, label }) => {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-row items-center gap-4">

@@ -10,12 +10,7 @@ interface CounterProps {
   onChange: (value: number) => void;
 }
 
-const Counter: React.FC<CounterProps> = ({
-  onChange,
-  subtitle,
-  title,
-  value,
-}) => {
+const Counter: React.FC<CounterProps> = ({ onChange, subtitle, title, value }) => {
   const onAdd = useCallback(() => {
     onChange(value + 1);
   }, [onChange, value]);
@@ -39,9 +34,7 @@ const Counter: React.FC<CounterProps> = ({
         >
           <AiOutlineMinus />
         </div>
-        <div className="font light text-xl text-neutral-600 pointer-events-none">
-          {value}
-        </div>
+        <div className="font light text-xl text-neutral-600 pointer-events-none">{value}</div>
         <div
           className="w-10 h-10 rounded-full border-[1px] border-neutral-400 flex items-center justify-center text-neutral-600 cursor-pointer hover:opacity-80 transition "
           onClick={onAdd}

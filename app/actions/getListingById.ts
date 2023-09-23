@@ -1,4 +1,3 @@
-
 import prisma from "@/app/libs/prismadb";
 import { NextResponse } from "next/server";
 
@@ -14,8 +13,8 @@ export default async function getListingById(params: IParams) {
         id: listingId,
       },
       include: {
-        user: true
-      }
+        user: true,
+      },
     });
     if (!listing) return null;
 

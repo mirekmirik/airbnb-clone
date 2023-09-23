@@ -8,6 +8,7 @@ export default async function getListings(): Promise<Listing[]> {
         createdAt: "desc",
       },
     });
+
     return listings;
   } catch (err: any) {
     throw new Error(err);
