@@ -32,7 +32,7 @@ const ListingClient: React.FC<ListingClientProps> = ({ listing, currentUser, res
   const [isLoading, setIsLoading] = useState(false);
   const [totalPrice, setTotalPrice] = useState(listing.price);
   const [dateRange, setDateRange] = useState<Range>(initialDateRange);
-  
+
   const router = useRouter();
 
   const disabledDates = useMemo(() => {
@@ -62,7 +62,7 @@ const ListingClient: React.FC<ListingClientProps> = ({ listing, currentUser, res
         toast.success(`Listing reserved!`);
         setDateRange(initialDateRange);
         // Redirect to /trips
-        router.refresh();
+        router.push("/trips");
       })
       .catch((err) => {
         toast.error(`Something went wrong...`);
@@ -99,7 +99,7 @@ const ListingClient: React.FC<ListingClientProps> = ({ listing, currentUser, res
             currentUser={currentUser}
           />
           <div className="grid grid-cols-1 md:grid-cols-7 md:gap-10 mt-6">
-            <div className="col-span-3 flex flex-col gap-8">
+            <div className="col-span-4 flex flex-col gap-8">
               <ListingInfo
                 user={listing.user}
                 category={category}
@@ -110,7 +110,7 @@ const ListingClient: React.FC<ListingClientProps> = ({ listing, currentUser, res
                 locationValue={listing.locationValue}
               />
             </div>
-            <div className="order-first mb-10 md:order-last md:col-span-4">
+            <div className="order-first mb-10 md:order-last md:col-span-3">
               <ListingReservation
                 price={listing.price}
                 totalPrice={totalPrice}

@@ -24,7 +24,7 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
   disabled,
 }) => {
 
-  const isDateAlreadyReverse = useMemo(() => {
+  const isDateAlreadyReserve = useMemo(() => {
     const startDate = dateRange?.startDate?.toISOString().split("T")[0];
     return disabledDates.some((date) => {
       const disableDate = date.toISOString().split("T")[0];
@@ -42,7 +42,7 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
       <Calendar disabledDates={disabledDates} value={dateRange} onChange={(value) => onChangeDate(value.selection)} />
       <hr />
       <div className="p-4">
-        <Button disabled={disabled || isDateAlreadyReverse} label="Reserve" onClick={onSubmit} />
+        <Button disabled={disabled || isDateAlreadyReserve} label="Reserve" onClick={onSubmit} />
       </div>
       <div className="p-4 flex flex-row items-center justify-between font-semibold text-lg">
         <div>Total</div>
