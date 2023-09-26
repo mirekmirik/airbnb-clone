@@ -96,7 +96,7 @@ const SearchModal = () => {
   const secondaryActionLabel = useMemo(() => {
     if (step === STEPS.LOCATION) return undefined;
     return "Back";
-  }, []);
+  }, [step]);
 
   let bodyContent = (
     <div className="flex flex-col gap-8">
