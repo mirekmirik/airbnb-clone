@@ -18,6 +18,10 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({ selected, icon: Icon, label }
   const handleClick = useCallback(() => {
     let currentQuery = {};
 
+    if(params) {
+      currentQuery = qs.parse(params.toString())
+    }
+
     const updatedQuery: any = {
       ...currentQuery,
       category: label,
@@ -34,7 +38,6 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({ selected, icon: Icon, label }
       },
       { skipNull: true }
     );
-    console.log("result url", url);
 
     router.push(url);
   }, [label, params, router]);

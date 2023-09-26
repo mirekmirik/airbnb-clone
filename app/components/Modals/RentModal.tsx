@@ -15,7 +15,6 @@ import Input from "../Inputs/Input";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { ST } from "next/dist/shared/lib/utils";
 
 enum STEPS {
   CATEGORY = 0,
