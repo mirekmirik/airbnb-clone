@@ -33,7 +33,6 @@ export const getReservations = async (params: IParams) => {
         createdAt: "desc",
       },
     });
-    console.log(reservations)
     return reservations;
   } catch (err: any) {
     throw new Error(err);

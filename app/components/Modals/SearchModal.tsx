@@ -76,8 +76,6 @@ const SearchModal = () => {
     if (dateRange.endDate) {
       updatedQuery.endDate = formatISO(dateRange.endDate);
     }
-    console.log(updatedQuery);
-
     const url = qs.stringifyUrl(
       {
         url: "/",

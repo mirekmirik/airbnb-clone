@@ -31,7 +31,6 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
     if (!currentUser) {
       return loginModal.onOpen();
     }
-    console.log("open");
     rentModal.onOpen();
   }, [loginModal, RentModal, currentUser]);
 

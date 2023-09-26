@@ -76,7 +76,6 @@ const RentModal = () => {
       shouldDirty: true,
       shouldTouch: true,
     });
-    console.log(getValues());
   };
 
   const onBack = () => {

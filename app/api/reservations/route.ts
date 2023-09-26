@@ -30,6 +30,5 @@ export async function POST(request: Request) {
       },
     },
   });
-  console.log(listingAndReservation);
   return NextResponse.json(listingAndReservation);
 }
