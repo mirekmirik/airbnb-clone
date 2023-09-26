@@ -1,6 +1,5 @@
 import { Listing } from "@prisma/client";
 import prisma from "../libs/prismadb";
-import { start } from "repl";
 
 export interface IListingParams {
   userId?: string;
